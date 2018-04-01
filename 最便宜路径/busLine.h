@@ -3,10 +3,10 @@
 #include<vector>
 #include<iostream>
 #include<string>
-#include"busStop.h"
 
 using namespace std;
 
+class busStop;
 class busLine
 {
 public:

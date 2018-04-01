@@ -1,5 +1,5 @@
 #include "busLine.h"
-
+#include "busStop.h"
 
 busLine::busLine() {}
 
@@ -12,11 +12,11 @@ busLine::busLine(int ID, int price, int time, int speed):
 busLine::~busLine(){}
 
 void busLine::addStop(wstring name, int x, int y) {
-	stops.push_back(busStop(name, x, y));
+	stops.push_back(busStop(name, x, y,this));
 }
 
 void busLine::output() {
 	for (int i = 0; i < stops.size(); i++) {
-		wcout << stops[i].name << "," << stops[i].x << "," << stops[i].y << endl;
+		//wcout << stops[i].name << "," << stops[i].x << "," << stops[i].y << endl;
 	}
 }
