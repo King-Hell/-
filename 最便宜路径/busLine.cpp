@@ -14,9 +14,3 @@ busLine::~busLine(){}
 void busLine::addStop(busStop* stop) {
 	stops.push_back(stop);
 }
-
-void busLine::output() {
-	//for (int i = 0; i < stops.size(); i++) {
-	//	//wcout << stops[i].name << "," << stops[i].x << "," << stops[i].y << endl;
-	//}
-}

@@ -6,11 +6,13 @@ using namespace std;
 class busStop
 {
 public:
-	busStop();
-	busStop(wstring name, int x, int y, busLine* line);//构造方法
-	~busStop();
-	vector<busLine*>* getLines(){ return &lines; }
-	wstring getName() { return name; };
+	busStop();//无参构造方法
+	busStop(wstring name, int x, int y, busLine* line);//有参构造方法
+	~busStop();//析构方法
+
+	vector<busLine*>* getLines(){ return &lines; }//返回lines集合指针
+	void addLine(busLine* line);
+	wstring getName() { return name; };//获取站点名称
 	
 private:
 	wstring name;//站点名称

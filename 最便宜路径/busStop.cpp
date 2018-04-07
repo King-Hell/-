@@ -8,5 +8,8 @@ busStop::busStop(wstring name,int x,int y,busLine* line):
 	lines.push_back(line);
 }
 
-
 busStop::~busStop(){}
+
+void busStop::addLine(busLine* line) {
+	lines.push_back(line);
+}
