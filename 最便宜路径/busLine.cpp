@@ -3,20 +3,20 @@
 
 busLine::busLine() {}
 
-busLine::busLine(int ID, int price, int time, int speed):
-	ID(ID),price(price),time(time),speed(speed)
+busLine::busLine(int ID,int number, int price, int time, int speed):
+	ID(ID),number(number),price(price),time(time),speed(speed)
 {
 }
 
 
 busLine::~busLine(){}
 
-void busLine::addStop(wstring name, int x, int y) {
-	stops.push_back(busStop(name, x, y,this));
+void busLine::addStop(busStop* stop) {
+	stops.push_back(stop);
 }
 
 void busLine::output() {
-	for (int i = 0; i < stops.size(); i++) {
-		//wcout << stops[i].name << "," << stops[i].x << "," << stops[i].y << endl;
-	}
+	//for (int i = 0; i < stops.size(); i++) {
+	//	//wcout << stops[i].name << "," << stops[i].x << "," << stops[i].y << endl;
+	//}
 }
