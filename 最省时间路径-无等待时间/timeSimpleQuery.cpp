@@ -122,18 +122,19 @@ void printPath(int predecessor[], busLine* line[], int endID) {
 		//输出最小线路的路径
 		int i = path.top();
 		path.pop();
+		int amount = path.size();
 		busLine* lastLine = NULL;
-
 		while (!path.empty()) {
 			if (line[path.top()] != lastLine) {
 				lastLine = line[path.top()];
-				wcout << L"；" << endl;
+				if (path.size() != amount)
+					wcout << L"；" << endl;
 				wcout << L"线路-" << lastLine->getNumber() << L"：";
 				wcout << L"站点-" << stops[i]->getName();
 			}
 			i = path.top();
 			path.pop();
-			if (path.size() == 1) {
+			if (path.size() == 0) {
 				wcout << L"，站点-" << stops[i]->getName() << L"。";
 			}
 			else
