@@ -15,33 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="busStop.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="busLine.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="timeSimpleQuery.h">
+    <ClInclude Include="busStop.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="graph.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="timeAdvanceQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="busStop.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="busLine.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="timeSimpleQuery.cpp">
+    <ClCompile Include="busStop.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="graph.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="timeAdvanceQuery.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
