@@ -68,6 +68,7 @@ void input() {
 		int x = 0, y = 0;
 		//解析站点数据
 		isStart = true;
+		stack<busStop*> stopStack;//用于保存站点，进行反向建立路线
 		while (index2 < (int)stopStr.length() - 1) {
 			//获取左括号位置
 			index1 = stopStr.find(L'（', index2 + 2);
@@ -95,6 +96,7 @@ void input() {
 			}
 			else
 				stop = stopMap[name];
+			stopStack.push(stop);
 			//判断是否为一个线路的起始站，若不是则在图中插入新边
 			if (!isStart) {
 				busStop* lastStop = stops[stopMap.size() - 2];
@@ -103,6 +105,14 @@ void input() {
 			}
 			else
 				isStart = false;
+		}
+		busStop* RlastStop = stopStack.top();
+		stopStack.pop();
+		while (!stopStack.empty()) {
+			busStop* Rstop = stopStack.top();
+			stopStack.pop();
+			stopGraph.insert(*RlastStop, *Rstop, line);
+			RlastStop = Rstop;
 		}
 	}
 	file.close();//关闭文件
@@ -175,7 +185,8 @@ void output(wstring startName, wstring endName) {
 	dijkstra(start->getID(), distanceFromSource, predecessor, line);
 	int minTime = INT_MAX;
 	printPath(predecessor, line, end->getID());
-	wcout << L"共花费" << distanceFromSource[end->getID()] << L"分钟时间。" << endl;
+	if (distanceFromSource[end->getID()] != INT_MAX)
+		wcout << L"共花费" << distanceFromSource[end->getID()] << L"分钟时间。" << endl;
 	delete[] distanceFromSource, predecessor, line;
 }
 
