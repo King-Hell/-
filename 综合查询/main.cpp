@@ -3,15 +3,15 @@
 int main() {
 	wcout.imbue(locale("chs"));//设置语言区域为中文
 	wcin.imbue(locale("chs"));
+	try {//尝试读取文件
+		input();
+	}
+	catch (exception e) {
+		cout << e.what() << endl;
+		system("pause");
+		return -1;
+	}
 	while (true) {
-		try {//尝试读取文件
-			input();
-		}
-		catch (exception e) {
-			cout << e.what()<<endl;
-			system("pause");
-			return -1;
-		}
 		//读取键盘输入
 		wstring start, end,typeName;
 		wstringstream wss;

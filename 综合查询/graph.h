@@ -14,7 +14,7 @@ struct edge {
 	busLine* nLine;//该边所在的路线，无换乘时的路线
 	map<busLine*, int> times;//不发生换乘时的等待时间
 	edge() {}
-	edge(int vertex, int wWeight,int nWeight, busStop* stop, busLine* line) : wWeight(wWeight), wLine(wLine),nLine(line),nWeight(nWeight), stop(stop) {}
+	edge(int vertex, int wWeight,int nWeight, busStop* stop, busLine* line) : wWeight(wWeight), wLine(line),nLine(line),nWeight(nWeight), stop(stop) {}
 };
 
 class graph {
