@@ -23,5 +23,6 @@ private:
 	int price;//线路价格，格式：X元
 	int time;//线路平均等待时间，格式：X分钟
 	int speed;//线路速度，格式：X/每分钟
+	
 };
 

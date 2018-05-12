@@ -16,7 +16,7 @@ public:
 	int getY() { return y; }
 
 private:
-	int ID;//站点存储编号
+	int ID;
 	wstring name;//站点名称
 	int x;//站点横坐标
 	int y;//站点纵坐标
